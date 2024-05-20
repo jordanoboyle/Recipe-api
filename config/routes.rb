@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   post "/recipes", controller: "recipes", action: "create"
+  get "/recipes", controller: "recipes", action: "index"
+  get "/recipes/:id", controller: "recipes", action: "show"
   
 end
