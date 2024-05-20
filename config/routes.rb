@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   post "/recipes", controller: "recipes", action: "create"
   get "/recipes", controller: "recipes", action: "index"
   get "/recipes/:id", controller: "recipes", action: "show"
+  patch "/recipes/:id", controller: "recipes", action: "update"
+  delete "/recipes/:id", controller: "recipes", action: "destroy"
   
 end

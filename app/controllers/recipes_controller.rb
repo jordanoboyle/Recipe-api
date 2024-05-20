@@ -20,4 +20,16 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find_by(id: params[:id])
     render template: "recipes/show"
   end
+
+  def update
+    @recipe = Recipe.find_by(id: 4)
+    @recipe.title = params[:title] || @recipe.title
+    @recipe.ingreds = params[:ingreds] || @recipe.ingreds
+    @recipe.directions = params[:directions] || @recipe.directions
+    @recipe.prep_time = params[:prep_time] || @recipe.prep_time
+    @recipe.save
+    
+    render template: "recipes/show"
+
+  end
 end
