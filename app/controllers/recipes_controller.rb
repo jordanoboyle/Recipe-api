@@ -2,10 +2,10 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(
-      title: "Test recipe",
-      ingreds: "Test ingred1",
-      directions: "Test direction",
-      prep_time: 20,
+      title: params[:title],
+      ingreds: params[:ingreds],
+      directions: params[:directions],
+      prep_time: params[:prep_time],
       )
     @recipe.save
     render template: "recipes/show"
