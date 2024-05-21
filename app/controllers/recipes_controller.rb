@@ -29,7 +29,12 @@ class RecipesController < ApplicationController
     @recipe.prep_time = params[:prep_time] || @recipe.prep_time
     @recipe.save
     
-    render template: "recipes/show"
+    render template: "recipes/show"   
+  end
 
+  def destroy
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.destroy
+    render template: "recipes/show"
   end
 end

@@ -8,26 +8,26 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-recipe = Recipe.new(
-  title: "Mushroom Risotto", 
-  ingreds: "Arborios rice, salt, water/clear stock, onions, mushrooms, Parmesanno, butter",
-  directions: "Cook onions until translucent, toast rice in pan with onions, add boiling water and stir continuously until done.",
-  prep_time: 90
-  )
-recipe.save
-recipe = Recipe.new(
-  title: "Hot Pocket",
-  ingreds: "Sauce of choice, filo dough/puff pastry, cured meat of choice, cheese of choice.",
-  directions: "fill filo dough with ingreds and bake with eggwash until golde brown.",
-  prep_time: 45
-)
-recipe.save
-recipe = Recipe.new(
-  title: "Pesto",
-  ingreds: "Basil, garlic, Parmesano, oil, lemon juic, pine nuts",
-  directions: "Add basil, nuts, garlic, cheese, lemon to processor. Process while adding oil. Smooth texture desired.",
-  prep_time: 15
-)
+# recipe = Recipe.new(
+#   title: "Mushroom Risotto", 
+#   ingreds: "Arborios rice, salt, water/clear stock, onions, mushrooms, Parmesanno, butter",
+#   directions: "Cook onions until translucent, toast rice in pan with onions, add boiling water and stir continuously until done.",
+#   prep_time: 90
+#   )
+# recipe.save
+# recipe = Recipe.new(
+#   title: "Hot Pocket",
+#   ingreds: "Sauce of choice, filo dough/puff pastry, cured meat of choice, cheese of choice.",
+#   directions: "fill filo dough with ingreds and bake with eggwash until golde brown.",
+#   prep_time: 45
+# )
+# recipe.save
+# recipe = Recipe.new(
+#   title: "Pesto",
+#   ingreds: "Basil, garlic, Parmesano, oil, lemon juic, pine nuts",
+#   directions: "Add basil, nuts, garlic, cheese, lemon to processor. Process while adding oil. Smooth texture desired.",
+#   prep_time: 15
+# )
 recipe.save
 recipe = Recipe.new(
   title: "Cacio Pepe",
