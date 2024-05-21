@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  ingredients: MyString
+  ingreds: MyString
   directions: MyString
   prep_time: 1
 
 two:
   title: MyString
-  ingredients: MyString
+  ingreds: MyString
   directions: MyString
   prep_time: 1

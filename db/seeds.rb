@@ -28,7 +28,7 @@
 #   directions: "Add basil, nuts, garlic, cheese, lemon to processor. Process while adding oil. Smooth texture desired.",
 #   prep_time: 15
 # )
-recipe.save
+# recipe.save
 recipe = Recipe.new(
   title: "Cacio Pepe",
   ingreds: "Parmesano, pasta water, pepper, dried long noodle of choice, salt",
