@@ -6,5 +6,6 @@ json.title recipe.title
 json.ingreds recipe.ingreds
 json.directions recipe.directions
 json.prep_time recipe.prep_time
+json.pretty_time recipe.pretty_time
 json.created_at recipe.created_at
 json.updated_at recipe.updated_at
