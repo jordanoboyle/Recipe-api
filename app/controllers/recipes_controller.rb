@@ -5,13 +5,16 @@ class RecipesController < ApplicationController
       title: params[:title],
       ingreds: params[:ingreds],
       directions: params[:directions],
-      prep_time: params[:prep_time],
+      prep_time: params[:prep_time], # one way to prevent data corruption is using || here to self adjust the value
       vegetarian: params[:vegetarian],
       tools_needed: params[:tools_needed],
       image_url: params[:image_url],
       )
-    @recipe.save
-    render template: "recipes/show"
+    if @recipe.save
+      render template: "recipes/show"
+    else
+      render json: {ERRORS: recipe.errors.full_messages}
+    end
   end
 
   def index
@@ -33,8 +36,9 @@ class RecipesController < ApplicationController
     @recipe.vegetarian = params[:vegetarian] || @recipe.vegetarian
     @recipe.tools_needed = params[:tools_needed] || @recipe.tools_needed
     @recipe.image_url = params[:image_url] || @recipe.image_url
+  
     @recipe.save
-    
+        
     render template: "recipes/show"   
   end
 

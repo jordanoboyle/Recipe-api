@@ -1,4 +1,8 @@
 class Recipe < ApplicationRecord
+  validates :title, length: {minimum: 5}
+  validates :prep_time, numericality: {only_integer: true}
+  validates :prep_time, numericality: {greater_than: 5}
+  validates :vegetarian, exclusion: [nil]
 
   def pretty_time
     hours = prep_time / 60
@@ -12,5 +16,5 @@ class Recipe < ApplicationRecord
       return "Prep time is: #{hours} hours #{minutes} minutes"
     end
   end
-  
+
 end
