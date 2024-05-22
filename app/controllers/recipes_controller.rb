@@ -6,6 +6,9 @@ class RecipesController < ApplicationController
       ingreds: params[:ingreds],
       directions: params[:directions],
       prep_time: params[:prep_time],
+      vegetarian: params[:vegetarian],
+      tools_needed: params[:tools_needed],
+      image_url: params[:image_url],
       )
     @recipe.save
     render template: "recipes/show"
@@ -22,11 +25,14 @@ class RecipesController < ApplicationController
   end
 
   def update
-    @recipe = Recipe.find_by(id: 4)
+    @recipe = Recipe.find_by(id: params[:id])
     @recipe.title = params[:title] || @recipe.title
     @recipe.ingreds = params[:ingreds] || @recipe.ingreds
     @recipe.directions = params[:directions] || @recipe.directions
     @recipe.prep_time = params[:prep_time] || @recipe.prep_time
+    @recipe.vegetarian = params[:vegetarian] || @recipe.vegetarian
+    @recipe.tools_needed = params[:tools_needed] || @recipe.tools_needed
+    @recipe.image_url = params[:image_url] || @recipe.image_url
     @recipe.save
     
     render template: "recipes/show"   
