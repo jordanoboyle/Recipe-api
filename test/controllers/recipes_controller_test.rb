@@ -10,7 +10,10 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
       title: "test product", 
       ingreds: "food", 
       directions: "do stuff", 
-      prep_time: 2  
+      prep_time: 6,
+      image_url: "image be here",
+      vegetarian: true, 
+      tools_needed: "tools be here",  
     }
     end
   end
@@ -44,11 +47,11 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   
   test "update" do
     recipe = Recipe.first
-    patch "/recipes/#{recipe.id}.json", params: { title: "Updated name" }
+    patch "/recipes/#{recipe.id}.json", params: { title: "Risotto" }
     assert_response 200
   
     data = JSON.parse(response.body)
-    assert_equal "Updated name", data["title"]
+    assert_equal "Risotto", data["title"]
   end
   
   test "destroy" do

@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       render template: "recipes/show"
     else
-      render json: {ERRORS: recipe.errors.full_messages}
+      render json: {ERRORS: @recipe.errors.full_messages}
     end
   end
 
@@ -37,9 +37,11 @@ class RecipesController < ApplicationController
     @recipe.tools_needed = params[:tools_needed] || @recipe.tools_needed
     @recipe.image_url = params[:image_url] || @recipe.image_url
   
-    @recipe.save
-        
-    render template: "recipes/show"   
+    if @recipe.save
+      render template: "recipes/show"   
+    else
+      render json: {ERRORS: @recipe.errors.full_messages}
+    end
   end
 
   def destroy
